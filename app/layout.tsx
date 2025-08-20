@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'João – AI MVP Builder',
-  description: 'Transformo ideias em apps com IA, automações e deploy rápido.'
+  title: 'Victor Bovo – Desenvolvedor Full Stack & Especialista em IA',
+  description: 'Transformo ideias em soluções digitais com IA. MVPs rápidos, automações inteligentes e chatbots conversacionais.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

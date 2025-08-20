@@ -12,12 +12,12 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   return (
-    <header className="border-b border-neutral-800/80 bg-neutral-950/50 sticky top-0 backdrop-blur">
+    <header className="border-b border-neutral-800/80 bg-neutral-950/50 sticky top-0 backdrop-blur z-50">
       <div className="container flex items-center justify-between h-16">
-        <Link href="/" className="font-bold tracking-tight">João • AI MVP Builder</Link>
+        <Link href="/" className="font-bold tracking-tight text-lg">Victor Bovo • Full Stack & IA</Link>
         <nav className="flex gap-4 text-sm">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className={`px-3 py-2 rounded-xl hover:bg-neutral-900 ${pathname===l.href ? 'bg-neutral-900 border border-neutral-800' : ''}`}>{l.label}</Link>
+            <Link key={l.href} href={l.href} className={`px-3 py-2 rounded-xl hover:bg-neutral-900 transition-colors ${pathname===l.href ? 'bg-neutral-900 border border-neutral-800' : ''}`}>{l.label}</Link>
           ))}
         </nav>
       </div>

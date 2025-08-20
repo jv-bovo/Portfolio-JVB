@@ -8,30 +8,64 @@ import projects from '@/data/projects';
 
 export default function Home() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       <Hero />
 
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Serviços</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          {services.slice(0,3).map((s) => (
-            <motion.div key={s.title} initial={{opacity:0, y:10}} animate={{opacity:1, y:0}}>
-              <ServiceCard {...s} />
+      <motion.section 
+        initial={{opacity:0, y:20}}
+        whileInView={{opacity:1, y:0}}
+        transition={{duration:0.6}}
+        viewport={{once: true}}
+        className="space-y-8"
+      >
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold">Serviços Especializados</h2>
+          <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+            Soluções completas em desenvolvimento e automação com IA para impulsionar seu negócio
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.slice(0,6).map((service, index) => (
+            <motion.div 
+              key={service.title} 
+              initial={{opacity:0, y:20}}
+              whileInView={{opacity:1, y:0}}
+              transition={{duration:0.6, delay: index * 0.1}}
+              viewport={{once: true}}
+            >
+              <ServiceCard {...service} />
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">Projetos</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          {projects.slice(0,3).map((p) => (
-            <motion.div key={p.title} initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}}>
-              <ProjectCard {...p} />
+      <motion.section 
+        initial={{opacity:0, y:20}}
+        whileInView={{opacity:1, y:0}}
+        transition={{duration:0.6}}
+        viewport={{once: true}}
+        className="space-y-8"
+      >
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold">Projetos em Destaque</h2>
+          <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+            Alguns dos projetos que desenvolvi usando as mais modernas tecnologias
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.slice(0,6).map((project, index) => (
+            <motion.div 
+              key={project.title} 
+              initial={{opacity:0, y:20}}
+              whileInView={{opacity:1, y:0}}
+              transition={{duration:0.6, delay: index * 0.1}}
+              viewport={{once: true}}
+            >
+              <ProjectCard {...project} />
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 } 

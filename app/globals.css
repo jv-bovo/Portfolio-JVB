@@ -2,11 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
-html, body { height: 100%; }
-body { @apply bg-neutral-950 text-neutral-100; }
-.container { @apply max-w-6xl mx-auto px-4; }
-.btn { @apply inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-medium shadow hover:shadow-lg transition;
-  background: linear-gradient(90deg, theme('colors.primary'), theme('colors.secondary')); }
-.card { @apply rounded-2xl bg-neutral-900/60 border border-neutral-800 p-5 shadow; }
-.badge { @apply text-xs px-2 py-1 rounded-full bg-neutral-800 border border-neutral-700; } 
+:root { 
+  color-scheme: dark; 
+}
+
+html, body { 
+  height: 100%; 
+  scroll-behavior: smooth;
+}
+
+body { 
+  @apply bg-dark text-light font-sans antialiased; 
+}
+
+.container { 
+  @apply max-w-6xl mx-auto px-4; 
+}
+
+.btn { 
+  @apply inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5;
+  background: linear-gradient(135deg, theme('colors.secondary'), theme('colors.accent')); 
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, theme('colors.accent'), theme('colors.secondary'));
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium border border-neutral-700 hover:border-neutral-600 transition-all duration-300;
+}
+
+.card { 
+  @apply rounded-2xl bg-neutral-900/60 border border-neutral-800/50 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/50 hover:shadow-2xl; 
+}
+
+.badge { 
+  @apply text-xs px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-secondary font-medium; 
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+} 
