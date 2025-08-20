@@ -1,5 +1,4 @@
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 type Project = {
   title: string;
@@ -10,10 +9,7 @@ type Project = {
 
 export default function ProjectCard({ title, description, tags, link }: Project) {
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="card group cursor-pointer"
-    >
+    <div className="card group cursor-pointer hover:-translate-y-1 transition-all duration-300">
       <div className="space-y-4">
         <div className="flex items-start justify-between">
           <h3 className="text-xl font-semibold group-hover:text-secondary transition-colors">{title}</h3>
@@ -40,6 +36,6 @@ export default function ProjectCard({ title, description, tags, link }: Project)
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 } 

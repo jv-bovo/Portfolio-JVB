@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Mail, MessageCircle, Clock, CheckCircle } from 'lucide-react';
 
 export default function ContactPage() {
@@ -16,25 +15,15 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
-      <motion.div 
-        initial={{opacity:0, y:20}}
-        animate={{opacity:1, y:0}}
-        transition={{duration:0.6}}
-        className="text-center space-y-4"
-      >
+      <div className="text-center space-y-4 animate-fade-in">
         <h1 className="text-4xl md:text-5xl font-bold">Vamos Conversar</h1>
         <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
           Me conte sobre seu projeto e eu respondo com uma proposta personalizada em 24h.
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-8">
-        <motion.div 
-          initial={{opacity:0, x:-20}}
-          animate={{opacity:1, x:0}}
-          transition={{duration:0.6, delay:0.2}}
-          className="space-y-6"
-        >
+        <div className="space-y-6 animate-slide-up">
           <div className="card space-y-4">
             <h2 className="text-2xl font-semibold">Informações do Projeto</h2>
             <input 
@@ -60,14 +49,9 @@ export default function ContactPage() {
               <Mail size={20}/> Enviar Proposta
             </button>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{opacity:0, x:20}}
-          animate={{opacity:1, x:0}}
-          transition={{duration:0.6, delay:0.4}}
-          className="space-y-6"
-        >
+        <div className="space-y-6 animate-slide-up" style={{animationDelay: '0.2s'}}>
           <div className="card space-y-6">
             <h2 className="text-2xl font-semibold">Outras Formas de Contato</h2>
             
@@ -124,7 +108,7 @@ export default function ContactPage() {
               <div className="text-neutral-400">Proposta personalizada</div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

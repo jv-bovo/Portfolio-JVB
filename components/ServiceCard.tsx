@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 type Service = {
@@ -12,10 +11,7 @@ type Service = {
 
 export default function ServiceCard({ title, description, bullets, cta = 'Solicitar Orçamento', link = '/contact' }: Service) {
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="card group cursor-pointer"
-    >
+    <div className="card group cursor-pointer hover:-translate-y-1 transition-all duration-300">
       <div className="space-y-4">
         <h3 className="text-xl font-semibold group-hover:text-secondary transition-colors">{title}</h3>
         <p className="text-neutral-300 leading-relaxed">{description}</p>
@@ -37,6 +33,6 @@ export default function ServiceCard({ title, description, bullets, cta = 'Solici
           <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform"/>
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 } 

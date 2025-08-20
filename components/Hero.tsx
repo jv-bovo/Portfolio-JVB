@@ -1,53 +1,28 @@
 'use client';
-import { motion } from 'framer-motion';
 import { Sparkles, Rocket, Zap, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden min-h-[80vh] flex items-center">
-      <motion.div 
-        initial={{opacity:0, y:20}} 
-        animate={{opacity:1, y:0}} 
-        transition={{duration:0.8}} 
-        className="text-center space-y-8 w-full"
-      >
-        <motion.div
-          initial={{opacity:0, scale:0.9}}
-          animate={{opacity:1, scale:1}}
-          transition={{delay:0.2, duration:0.6}}
-        >
+      <div className="text-center space-y-8 w-full animate-fade-in">
+        <div className="animate-slide-up">
           <span className="badge inline-flex items-center gap-2 text-sm">
             <Sparkles size={16}/> Especialista em IA & Automação
           </span>
-        </motion.div>
+        </div>
 
-        <motion.h1 
-          initial={{opacity:0, y:20}}
-          animate={{opacity:1, y:0}}
-          transition={{delay:0.3, duration:0.8}}
-          className="text-5xl md:text-7xl font-bold leading-tight"
-        >
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-slide-up" style={{animationDelay: '0.2s'}}>
           Transformo <span className="gradient-text">ideias</span> em{' '}
           <span className="gradient-text">soluções</span> digitais
-        </motion.h1>
+        </h1>
 
-        <motion.p 
-          initial={{opacity:0, y:20}}
-          animate={{opacity:1, y:0}}
-          transition={{delay:0.4, duration:0.8}}
-          className="text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed"
-        >
+        <p className="text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{animationDelay: '0.4s'}}>
           Desenvolvedor Full Stack especializado em IA. Crio MVPs funcionais, 
           automações inteligentes e chatbots conversacionais que geram valor real para seu negócio.
-        </motion.p>
+        </p>
 
-        <motion.div 
-          initial={{opacity:0, y:20}}
-          animate={{opacity:1, y:0}}
-          transition={{delay:0.5, duration:0.8}}
-          className="flex items-center justify-center gap-4 flex-wrap"
-        >
+        <div className="flex items-center justify-center gap-4 flex-wrap animate-slide-up" style={{animationDelay: '0.6s'}}>
           <Link href="/contact" className="btn text-lg">
             <Rocket size={20}/> Começar Projeto
           </Link>
@@ -62,14 +37,9 @@ export default function Hero() {
           >
             <MessageCircle size={20}/> WhatsApp
           </a>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{opacity:0}}
-          animate={{opacity:1}}
-          transition={{delay:0.8, duration:1}}
-          className="flex items-center justify-center gap-8 text-sm text-neutral-400 mt-12"
-        >
+        <div className="flex items-center justify-center gap-8 text-sm text-neutral-400 mt-12 animate-fade-in" style={{animationDelay: '0.8s'}}>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             Disponível para projetos
@@ -82,8 +52,8 @@ export default function Hero() {
             <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
             Garantia de qualidade
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Background Effects */}
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-20" aria-hidden>

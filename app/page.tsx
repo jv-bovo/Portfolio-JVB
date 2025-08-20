@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
@@ -11,13 +10,7 @@ export default function Home() {
     <div className="space-y-16">
       <Hero />
 
-      <motion.section 
-        initial={{opacity:0, y:20}}
-        whileInView={{opacity:1, y:0}}
-        transition={{duration:0.6}}
-        viewport={{once: true}}
-        className="space-y-8"
-      >
+      <section className="space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">Serviços Especializados</h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
@@ -26,26 +19,18 @@ export default function Home() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.slice(0,6).map((service, index) => (
-            <motion.div 
+            <div 
               key={service.title} 
-              initial={{opacity:0, y:20}}
-              whileInView={{opacity:1, y:0}}
-              transition={{duration:0.6, delay: index * 0.1}}
-              viewport={{once: true}}
+              className="animate-slide-up"
+              style={{animationDelay: `${index * 0.1}s`}}
             >
               <ServiceCard {...service} />
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
-        initial={{opacity:0, y:20}}
-        whileInView={{opacity:1, y:0}}
-        transition={{duration:0.6}}
-        viewport={{once: true}}
-        className="space-y-8"
-      >
+      <section className="space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">Projetos em Destaque</h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
@@ -54,18 +39,16 @@ export default function Home() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.slice(0,6).map((project, index) => (
-            <motion.div 
+            <div 
               key={project.title} 
-              initial={{opacity:0, y:20}}
-              whileInView={{opacity:1, y:0}}
-              transition={{duration:0.6, delay: index * 0.1}}
-              viewport={{once: true}}
+              className="animate-slide-up"
+              style={{animationDelay: `${index * 0.1}s`}}
             >
               <ProjectCard {...project} />
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 } 
