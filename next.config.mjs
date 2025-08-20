@@ -1,4 +1,3 @@
 export default {
-  reactStrictMode: true,
-  experimental: { optimizeCss: true }
+  reactStrictMode: true
 };
